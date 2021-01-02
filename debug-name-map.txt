@@ -1,0 +1,5 @@
+0 SAME
+1 A_GREATER
+2 B_GREATER
+
+
