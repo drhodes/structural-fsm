@@ -24,14 +24,12 @@ module fsm(clk, reset, ai, bi, out, debugstate);
                                (ai >  bi) ? A_GREATER : 0;
          endcase 
          debugstate <= next_state;
-      end // always @ (state or ai or bi)
+      end
    end 
    
    always @(posedge clk) state <= next_state;
    
-   //    
    // Output Logic
-   //
    assign out = (next_state == SAME)      ? ai :
                 (next_state == A_GREATER) ? ai :
                 (next_state == B_GREATER) ? bi : 0;
